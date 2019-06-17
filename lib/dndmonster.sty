@@ -1,22 +1,18 @@
 \usepackage{fp}
 \usepackage[english,ngerman,main=russian]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{forloop}
+\usepackage[foo]{optional}
+\usepackage{boolexpr}
 
-\newcommand*\statcircle{
-    \tikz\draw (0,0) circle (1ex);
-}
-
-\newcommand*\filledstatcircle{
-    \tikz\draw[black, fill=black] (0,0) circle (1ex);
-}
-
-\newcommand{\stat}[1]{%
-   \FPeval{\mod}{(#1 - 10)/2}%
-   \FPifpos\mod%
-   \FPeval{\mod}{clip(trunc(mod,0))}#1 (+\mod)%
-   \else%
-   \FPeval{\mod}{clip(trunc(mod-0.5,0))}#1 (\mod)%
-   \fi%
+\newcounter{statcirclecounter}
+\newcommand{\stat}[1]{
+	\forloop{statcirclecounter}{0}{\value{statcirclecounter} < 5}%
+	{%
+		\ifboolexpr{#1 > \value{statcirclecounter}}
+		{& \tikz\draw[black, fill=black] (0,0) circle (1ex);}
+		{& \tikz\draw (0,0) circle (1ex);}
+		}
 }
 
 \newtcolorbox{monsterbox}[2][]{
@@ -60,12 +56,7 @@
 	\textbf{Speed} \commandkey{speed}\\
 }
 
-\newkeycommand\stats[STR=\stat{10},
-                        DEX=\stat{10},
-                        CON=\stat{10},
-                        INT=\stat{10},
-                        WIS=\stat{10},
-                        CHA=\stat{10}]{
+\newkeycommand\stats[STR=\stat{0}, DEX=\stat{0}, CON=\stat{0}, INT=\stat{0}, WIT=\stat{0}, WIL=\stat{0}]{%
     {\footnotesize
 	\hspace*{-3.5pt}
 	\resizebox{0.97\linewidth}{\height}{
@@ -74,19 +65,19 @@
 
 			\begin{tabular}{c}
 				\textbf{Физические Характеристики} \\
-				\begin{tabular}{lrrr}
-					\textbf{Сила} & \statcircle & \statcircle & \statcircle \\
-					\textbf{Ловкость} & \statcircle & \statcircle & \statcircle \\
-					\textbf{Выносливость} & \statcircle & \statcircle & \statcircle
+				\begin{tabular}{lrrrrr}
+					\textbf{Сила} \commandkey{STR} \\
+					\textbf{Ловкость} \commandkey{DEX} \\
+					\textbf{Выносливость} \commandkey{CON}
 				\end{tabular}
 			\end{tabular}
 			
 			\begin{tabular}{c}
 				\textbf{Ментальные Характеристики} \\
-				\begin{tabular}{lrrr}
-					\textbf{Интеллект} & \statcircle & \statcircle & \statcircle \\
-					\textbf{Смекалка} & \statcircle & \statcircle & \statcircle \\
-					\textbf{Воля} & \statcircle & \statcircle & \statcircle
+				\begin{tabular}{lrrrrr}
+					\textbf{Интеллект} \commandkey{INT} \\
+					\textbf{Смекалка} \commandkey{WIT} \\
+					\textbf{Воля} \commandkey{WIL}
 				\end{tabular}
 			\end{tabular}
 		\end{tabular}
