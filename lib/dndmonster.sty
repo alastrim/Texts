@@ -6,13 +6,24 @@
 \usepackage{boolexpr}
 
 \newcounter{statcirclecounter}
-\newcommand{\stat}[1]{
-	\forloop{statcirclecounter}{0}{\value{statcirclecounter} < 5}%
+\newcommand{\stat}[1]
+{%
+	\forloop{statcirclecounter}{0}{\value{statcirclecounter} < 8}%
 	{%
-		\ifboolexpr{#1 > \value{statcirclecounter}}
-		{& \tikz\draw[black, fill=black] (0,0) circle (1ex);}
-		{& \tikz\draw (0,0) circle (1ex);}
-		}
+		\ifboolexpr{#1 > \value{statcirclecounter}}%
+			{%
+				& \tikz\draw[black, fill=black] (0,0) circle (1ex);%
+			}%
+			{%
+				\ifboolexpr{\value{statcirclecounter} < 5}
+				{%
+					& \tikz\draw (0,0) circle (1ex);%
+				}%
+				{%
+					& \tikz\draw (0,0) circle (0ex);%
+				}%
+			}%
+	}%
 }
 
 \newtcolorbox{monsterbox}[2][]{
@@ -56,35 +67,25 @@
 	\textbf{Speed} \commandkey{speed}\\
 }
 
-\newkeycommand\stats[STR=\stat{0}, DEX=\stat{0}, CON=\stat{0}, INT=\stat{0}, WIT=\stat{0}, WIL=\stat{0}]{%
-    {\footnotesize
-	\hspace*{-3.5pt}
-	\resizebox{0.97\linewidth}{\height}{
-		\begin{tabular}{lr}
-			\rule{0pt}{3.7mm}
-
-			\begin{tabular}{c}
-				\textbf{Физические Характеристики} \\
-				\begin{tabular}{lrrrrr}
-					\textbf{Сила} \commandkey{STR} \\
-					\textbf{Ловкость} \commandkey{DEX} \\
-					\textbf{Выносливость} \commandkey{CON}
-				\end{tabular}
-			\end{tabular}
-			
-			\begin{tabular}{c}
-				\textbf{Ментальные Характеристики} \\
-				\begin{tabular}{lrrrrr}
-					\textbf{Интеллект} \commandkey{INT} \\
-					\textbf{Смекалка} \commandkey{WIT} \\
-					\textbf{Воля} \commandkey{WIL}
-				\end{tabular}
+\newkeycommand\stats[STR=\stat{0}, DEX=\stat{0}, CON=\stat{0}, INT=\stat{0}, WIT=\stat{0}, WIL=\stat{0}]{%\color{titlered}
+	\color{titlered}
+	\begin{tabular}{lr}
+		\begin{tabular}{c}
+			\begin{tabular}{lrrrrrrrr}
+				\textbf{Сила} \commandkey{STR} \\
+				\textbf{Ловкость} \commandkey{DEX} \\
+				\textbf{Выносливость} \commandkey{CON}
 			\end{tabular}
 		\end{tabular}
-
-	}
-	\\[0.4em]
-    }
+		
+		\begin{tabular}{c}
+			\begin{tabular}{lrrrrrrrr}
+				\textbf{Интеллект} \commandkey{INT} \\
+				\textbf{Смекалка} \commandkey{WIT} \\
+				\textbf{Воля} \commandkey{WIL}
+			\end{tabular}
+		\end{tabular}
+	\end{tabular}
 }
 
 \newkeycommand\details[skills=,

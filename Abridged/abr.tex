@@ -10,14 +10,16 @@
 \fontfamily{ppl}\selectfont
 \tableofcontents
 
+\clearpage
 \part{Создание Персонажа}
+\onecolumn
 \section{Лист Персонажа}
 \begin{monsterbox}{Monster Foo}
 	\textit{Small metasyntactic variable (goblinoid), neutral evil}\\
 	\hline
-	\basics[armorclass = 12, hitpoints = 16 (3d8+3), speed = 50 ft]
+	\stats[STR = \stat{2}, DEX = \stat{1}, WIL = \stat{7}]
 	\hline
-	\stats[STR = \stat{2}, DEX = \stat{1}]
+	\basics[armorclass = 12, hitpoints = 16 (3d8+3), speed = 50 ft]
 	\hline
 	\details[languages = {Common Lisp, Erlang},]
 	\hline \\[1mm]
@@ -32,6 +34,8 @@
 		See, here he goes again! Yet more text.
 	\end{monsteraction}
 \end{monsterbox}
+\twocolumn
+\clearpage
 
 \section{Создание персонажа}
 \lipsum[1]
