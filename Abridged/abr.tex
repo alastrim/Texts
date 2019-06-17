@@ -1,35 +1,91 @@
-\input{misc.tex}
-\title{Краткая система}
-\maketitle
+\documentclass[10pt,twoside,twocolumn,openany]{book}
+\usepackage[bg-letter]{../lib/dnd}
+\usepackage[english,ngerman,main=russian]{babel}
+\usepackage[utf8]{inputenc}
+\begin{document}
+\fontfamily{ppl}\selectfont
 \tableofcontents
 
-\clearpage
-\part{Создание персонажа}
-\section{Первый уровень}
-\section{Повышение уровня}
+\chapter{Основы}
+
+\section{Лист Персонажа}
+\begin{monsterbox}{Monster Foo}
+	\textit{Small metasyntactic variable (goblinoid), neutral evil}\\
+	\hline
+	\basics[%
+	armorclass = 12,
+	hitpoints  = 16 (3d8 + 3),
+	speed      = 50 ft
+	]
+	\hline
+	\stats[
+    STR = \stat{12}, 
+    DEX = \stat{7}
+	]
+	\hline
+	\details[
+	languages = {Common Lisp, Erlang},
+	]
+	\hline \\[1mm]
+	\begin{monsteraction}[Monster-super-powers]
+		This Monster has some serious superpowers!
+	\end{monsteraction}
+	\monstersection{Actions}
+	\begin{monsteraction}[Generate text]
+		This one can generate tremendous amounts of text! Though only when it wants to.
+	\end{monsteraction}
+
+	\begin{monsteraction}[More actions]
+    See, here he goes again! Yet more text.
+	\end{monsteraction}
+\end{monsterbox}
+
+\newpage
+\section{Создание персонажа}
+\lipsum[1]
+\subsection{Первый уровень}
+\lipsum[1]
+\subsubsection{Повышение уровня}
+\lipsum[1]
+
+\newpage
+\section{Правила боя}
+\lipsum[1]
+\subsection{Атака}
+\lipsum[1]
+\subsubsection{Урон}
+\lipsum[1]
+\subsection{Здоровье}
+\lipsum[1]
+\subsection{Типы действий в бою}
+\lipsum[1]
+
+\newpage
+\section{Навыки}
+\lipsum[1]
+\subsection{Общие}
+\lipsum[1]
+\subsubsection{Воинские}
+\lipsum[1]
+\subsection{Магические}
+\lipsum[1]
+
+\newpage
+\section{Экипировка}
+\lipsum[1]
+\subsection{Оружие}
+\lipsum[1]
+\subsubsection{Доспехи}
+\lipsum[1]
 
 \clearpage
-\part{Правила боя}
-\section{Атака}
-\section{Урон}
-\section{Здоровье}
-\section{Типы действий в бою}
-
-\clearpage
-\part{Навыки}
-\section{Общие}
-\section{Воинские}
-\section{Магические}
-
-\clearpage
-\part{Экипировка}
-\section{Оружие}
-\section{Доспехи}
-
-\clearpage
-\part{Заклинания}
-\section{\textrm{I} Круг}
-\section{\textrm{II} Круг}
-\section{\textrm{III} Круг}
+\section{Заклинания}
+\lipsum[1]
+\subsection{\textrm{I} Круг}
+\lipsum[1]
+\subsection{\textrm{II} Круг}
+\lipsum[1]
+\subsection{\textrm{III} Круг}
+\lipsum[1]
 
 \end{document}
