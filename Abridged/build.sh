@@ -1,3 +1,4 @@
+pdflatex example.tex
 pdflatex abr.tex
 
 rm *.log
