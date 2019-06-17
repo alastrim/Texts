@@ -6,26 +6,16 @@
 \fontfamily{ppl}\selectfont
 \tableofcontents
 
-\chapter{Основы}
-
+\part{Создание Персонажа}
 \section{Лист Персонажа}
 \begin{monsterbox}{Monster Foo}
 	\textit{Small metasyntactic variable (goblinoid), neutral evil}\\
 	\hline
-	\basics[%
-	armorclass = 12,
-	hitpoints  = 16 (3d8 + 3),
-	speed      = 50 ft
-	]
+	\basics[armorclass = 12, hitpoints = 16 (3d8+3), speed = 50 ft]
 	\hline
-	\stats[
-    STR = \stat{12}, 
-    DEX = \stat{7}
-	]
+	\stats[STR = \stat{12}, DEX = \stat{7}]
 	\hline
-	\details[
-	languages = {Common Lisp, Erlang},
-	]
+	\details[languages = {Common Lisp, Erlang},]
 	\hline \\[1mm]
 	\begin{monsteraction}[Monster-super-powers]
 		This Monster has some serious superpowers!
@@ -34,58 +24,56 @@
 	\begin{monsteraction}[Generate text]
 		This one can generate tremendous amounts of text! Though only when it wants to.
 	\end{monsteraction}
-
 	\begin{monsteraction}[More actions]
-    See, here he goes again! Yet more text.
+		See, here he goes again! Yet more text.
 	\end{monsteraction}
 \end{monsterbox}
 
-\newpage
 \section{Создание персонажа}
 \lipsum[1]
 \subsection{Первый уровень}
 \lipsum[1]
-\subsubsection{Повышение уровня}
+\subsection{Повышение уровня}
 \lipsum[1]
 
-\newpage
-\section{Правила боя}
+\part{Бой}
+\section{Общий ход боя}
 \lipsum[1]
-\subsection{Атака}
+\section{Атака}
 \lipsum[1]
-\subsubsection{Урон}
+\section{Урон}
 \lipsum[1]
-\subsection{Здоровье}
+\section{Здоровье}
 \lipsum[1]
-\subsection{Типы действий в бою}
-\lipsum[1]
-
-\newpage
-\section{Навыки}
-\lipsum[1]
-\subsection{Общие}
-\lipsum[1]
-\subsubsection{Воинские}
-\lipsum[1]
-\subsection{Магические}
+\section{Типы действий в бою}
 \lipsum[1]
 
-\newpage
-\section{Экипировка}
+\part{Навыки}
+\section{Общая информация}
 \lipsum[1]
-\subsection{Оружие}
+\section{Общие}
 \lipsum[1]
-\subsubsection{Доспехи}
+\section{Воинские}
+\lipsum[1]
+\section{Магические}
 \lipsum[1]
 
-\clearpage
-\section{Заклинания}
+\part{Экипировка}
+\section{Общая информация}
 \lipsum[1]
-\subsection{\textrm{I} Круг}
+\section{Оружие}
 \lipsum[1]
-\subsection{\textrm{II} Круг}
+\section{Доспехи}
 \lipsum[1]
-\subsection{\textrm{III} Круг}
+
+\part{Заклинания}
+\section{Общая информация}
+\lipsum[1]
+\section{\textrm{I} Круг}
+\lipsum[1]
+\section{\textrm{II} Круг}
+\lipsum[1]
+\section{\textrm{III} Круг}
 \lipsum[1]
 
 \end{document}
