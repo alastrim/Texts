@@ -1,8 +1,15 @@
-% Monster environment sty file
 \usepackage{fp}
+\usepackage[english,ngerman,main=russian]{babel}
+\usepackage[utf8]{inputenc}
 
-% Macro to print stats with autocomputed modifier
-% e.g. \stat{12} prints "12 (+1)"
+\newcommand*\statcircle{
+    \tikz\draw (0,0) circle (1ex);
+}
+
+\newcommand*\filledstatcircle{
+    \tikz\draw[black, fill=black] (0,0) circle (1ex);
+}
+
 \newcommand{\stat}[1]{%
    \FPeval{\mod}{(#1 - 10)/2}%
    \FPifpos\mod%
@@ -12,28 +19,6 @@
    \fi%
 }
 
-% Monster box made to look like the Monster Manual NPC definitions
-\newtcolorbox{monsterboxnobg}[2][]{
-   enhanced,
-   frame hidden,
-   before skip=7pt plus2pt,
-   boxrule=0pt,
-   breakable,
-   boxsep=0.25ex,
-   toptitle=3mm,
-   left=2.5mm,
-   right=2.15mm,
-   arc=0mm,
-   opacityback=0,
-   colframe=titlered,
-   fonttitle=\scshape\bfseries\color{titlered}\Large,
-   fontupper=\fontfamily{lmss}\selectfont,
-   title=#2,
-   after={\vspace{7pt plus 1pt}\noindent},
-   #1
-}
-
-% new Monsterbox
 \newtcolorbox{monsterbox}[2][]{
 	enhanced,
 	frame hidden,
@@ -59,24 +44,15 @@
 	#1
 }
 
-
-% Define Monster subsection header style
-%\newcommand{\monstersection}[1]{\subsubsection*{#1}}
 \newcommand{\monstersection}[1]{
 	{\par
 	\color{titlered}\normalfont\scshape\Large #1 \vspace{3pt}
 	\titleline{\color{titlered}\titlerule[0.6pt]}
 	\par\medskip}
 	}
-%\titlespacing*{\subsubsection}{0pt}{*0.5}{5pt}
-%\titleformat{\subsubsection}
-%{\color{titlered}\normalfont\scshape\Large}{\thesubsection}{1em}{}[{\color{titlered}\titlerule[0.5pt]\color{black}}]
 
 \newenvironment{monsteraction}[1][\unskip]{\emph{\textbf{#1.}}}{\vspace{0.5em}}
 
-%
-% Macros for use within the monster environment
-%
 \newkeycommand\basics[armorclass=0, hitpoints=0, speed=0]{%
 	\color{titlered}
 	\textbf{Armor Class} \commandkey{armorclass}\\
@@ -84,7 +60,6 @@
 	\textbf{Speed} \commandkey{speed}\\
 }
 
-% Taubular enviornment for stats-block
 \newkeycommand\stats[STR=\stat{10},
                         DEX=\stat{10},
                         CON=\stat{10},
@@ -94,13 +69,30 @@
     {\footnotesize
 	\hspace*{-3.5pt}
 	\resizebox{0.97\linewidth}{\height}{
-		\begin{tabular}{cccccc}
-			\rule{0pt}{3.7mm} %adds space between hline and table
-			\textbf{STR} & \textbf{DEX} & \textbf{CON} & \textbf{INT} & \textbf{WIS} & \textbf{CHA}\\
-			\commandkey{STR} & \commandkey{DEX} & \commandkey{CON} & \commandkey{INT} & \commandkey{WIS} & \commandkey{CHA}
+		\begin{tabular}{lr}
+			\rule{0pt}{3.7mm}
+
+			\begin{tabular}{c}
+				\textbf{Физические Характеристики} \\
+				\begin{tabular}{lrrr}
+					\textbf{Сила} & \statcircle & \statcircle & \statcircle \\
+					\textbf{Ловкость} & \statcircle & \statcircle & \statcircle \\
+					\textbf{Выносливость} & \statcircle & \statcircle & \statcircle
+				\end{tabular}
+			\end{tabular}
+			
+			\begin{tabular}{c}
+				\textbf{Ментальные Характеристики} \\
+				\begin{tabular}{lrrr}
+					\textbf{Интеллект} & \statcircle & \statcircle & \statcircle \\
+					\textbf{Смекалка} & \statcircle & \statcircle & \statcircle \\
+					\textbf{Воля} & \statcircle & \statcircle & \statcircle
+				\end{tabular}
+			\end{tabular}
 		\end{tabular}
+
 	}
-	\\[0.4em] %adds space after table
+	\\[0.4em]
     }
 }
 
@@ -125,7 +117,6 @@
     {\textbf{Damage Immunities} \commandkey{damageimmunities}\\}{}
   \ifcommandkey{conditionimmunities}
     {\textbf{Condition Immunities} \commandkey{conditionimmunities}\\}{}
-  % These traits appear to always be present.
   {\textbf{Senses} \commandkey{senses}\\}
   {\textbf{Languages} \commandkey{languages}\\}
   {\textbf{Challenge} \commandkey{challenge}\\}
