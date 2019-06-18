@@ -89,19 +89,16 @@
 	\par\medskip}
 	}
 
-\newcommand{\monsteraction}[2]
-{
-	{\emph{\textbf{#1. }}}\text{#2}\\
-}
+\newcommand{\monsteraction}[2]{{\emph{\textbf{#1. }}}#2\\}
+
 
 \newkeycommand\basics[speed=0,dodge=0,armor=0,block=0]
 {
 	\color{titlered}
 	\textbf{Скорость: {\large\commandkey{speed}}} (3 + ЛВ) \\
-	\textbf{Уклонение: {\large\commandkey{armor}}} (\quad + ЛВ) \\
-	\textbf{Броня: {\large\commandkey{block}}} (\quad + ЛВ) \\
+	\textbf{Уклонение: {\large\commandkey{dodge}}} (\quad + ЛВ) \\
+	\textbf{Броня: {\large\commandkey{armor}}} (\quad + ЛВ) \\
 	\textbf{Блок: {\large\commandkey{block}}} \\
-	\hline
 }
 
 \newkeycommand\stats[STR=\stat{0}, DEX=\stat{0}, CON=\stat{0}, INT=\stat{0}, WIT=\stat{0}, WIL=\stat{0}]{%
@@ -123,5 +120,5 @@
 			\end{tabular}
 		\end{tabular}
 	\end{tabular}
-	\hline
+	\\
 }
