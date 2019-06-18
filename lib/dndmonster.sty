@@ -82,12 +82,7 @@
 	\hline
 }
 
-\newcommand{\monstersection}[1]{
-	{\par
-	\color{titlered}\normalfont\scshape\Large #1 \vspace{3pt}
-	\titleline{\color{titlered}\titlerule[0.6pt]}
-	\par\medskip}
-	}
+\newcommand{\monstersection}[1]{{\par\color{titlered}\normalfont\scshape\Large #1 \vspace{3pt} \titleline{\color{titlered}\titlerule[0.6pt]} \par\medskip}}
 
 \newcommand{\monsteraction}[2]{{\emph{\textbf{#1 }}}#2\\}
 
@@ -99,6 +94,16 @@
 \newkeycommand\armor[name = безымянные доспехи, dodge = 0, armor = 0, block = 0, special = обычное]
 {
 	\monsteraction{\commandkey{name}}{(ЛВ \commandkey{dodge} / ЛВ \commandkey{armor} / \commandkey{block} / \commandkey{special})}
+}
+
+\newcommand{\onaline}[1]
+{
+	\raisebox{.3ex}{\makebox[0pt][l]{#1}}{\line(1,0){120}}\\
+}
+
+\newcommand{\onlongline}[1]
+{
+	\raisebox{.3ex}{\makebox[0pt][l]{#1}}{\line(1,0){270}}\\
 }
 
 \newkeycommand\basics[speed=0,dodge=0,armor=0,block=0]
