@@ -1,5 +1,6 @@
 \usepackage{xfp}
 \usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
 \usepackage[english,ngerman,main=russian]{babel}
 \usepackage{forloop}
 \usepackage{tikz}
@@ -69,7 +70,7 @@
 	colbacktitle=monstertan,
 	colframe=titlered,
 	fonttitle=\scshape\bfseries\color{titlered}\Large,
-	fontupper=\fontfamily{lmss}\selectfont,
+	fontupper=\fontfamily{cmss}\selectfont,
 	title=#2,
 	after={\vspace{7pt plus 1pt}\noindent},
 	#1
@@ -91,7 +92,7 @@
 	\textbf{Speed} \commandkey{speed}\\
 }
 
-\newkeycommand\stats[STR=\stat{0}, DEX=\stat{0}, CON=\stat{0}, INT=\stat{0}, WIT=\stat{0}, WIL=\stat{0}]{%\color{titlered}
+\newkeycommand\stats[STR=\stat{0}, DEX=\stat{0}, CON=\stat{0}, INT=\stat{0}, WIT=\stat{0}, WIL=\stat{0}]{%
 	\color{titlered}
 	\begin{tabular}{lr}
 		\begin{tabular}{c}

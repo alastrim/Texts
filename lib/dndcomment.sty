@@ -11,7 +11,7 @@
 	right=8pt,
 	arc=0mm,
 	fonttitle=\fontfamily{fosj}\selectfont\scshape\bfseries\color{black},
-	fontupper=\fontfamily{lmss}\selectfont,
+	fontupper=\fontfamily{cmss}\selectfont,
 	title=#2,
 	parbox = false,
 	colback=commentgreen,
@@ -20,13 +20,3 @@
 	after={\vspace{5pt plus 1pt}\noindent},
 	#1
 }
-
-%
-% Old implementation using mdframed
-%
-%\newenvironment{commentbox}[1]
-%{\fontfamily{lmss}\selectfont\begin{mdframed}[frametitle={#1},
-%                                          frametitlefont=\fontfamily{fosj}\selectfont\scshape\bfseries\color{black},
-%                                              linecolor=commentgreen,
-%                                              backgroundcolor=commentgreen]}
-%{\end{mdframed}}
