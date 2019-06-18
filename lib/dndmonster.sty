@@ -1,16 +1,45 @@
-\usepackage{fp}
-\usepackage[english,ngerman,main=russian]{babel}
+\usepackage{xfp}
 \usepackage[utf8]{inputenc}
+\usepackage[english,ngerman,main=russian]{babel}
 \usepackage{forloop}
-\usepackage[foo]{optional}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
 \usepackage{boolexpr}
+
+\newcommand{\statstar}
+{%
+	\tikzstyle{scorestars}=[star, star points=5, star point ratio=2.25, draw,inner sep=0.333ex,anchor=outer point 3]%
+	\begin{tikzpicture}[baseline]%
+		\draw (0,0) node[name=star,scorestars,fill=black]  {};%
+	\end{tikzpicture}%
+}
 
 \newcounter{statcirclecounter}
 \newcommand{\stat}[1]
 {%
-	\forloop{statcirclecounter}{0}{\value{statcirclecounter} < 8}%
+	\ifboolexpr{#1 > 8}%
 	{%
-		\ifboolexpr{#1 > \value{statcirclecounter}}%
+		\forloop{statcirclecounter}{0}{\value{statcirclecounter} < 8}%
+		{%
+			\ifboolexpr{(\inteval{#1 / 5}) > \value{statcirclecounter}}%
+			{%
+				& \statstar%
+			}%
+			{%
+				\ifboolexpr{\value{statcirclecounter} < 5}
+				{%
+					& \tikz\draw (0,0) circle (1ex);%
+				}%
+				{%
+					& \tikz\draw (0,0) circle (0ex);%
+				}%
+			}%
+		}%
+	}%
+	{%
+		\forloop{statcirclecounter}{0}{\value{statcirclecounter} < 8}%
+		{%
+			\ifboolexpr{#1 > \value{statcirclecounter}}%
 			{%
 				& \tikz\draw[black, fill=black] (0,0) circle (1ex);%
 			}%
@@ -23,6 +52,7 @@
 					& \tikz\draw (0,0) circle (0ex);%
 				}%
 			}%
+		}%
 	}%
 }
 
