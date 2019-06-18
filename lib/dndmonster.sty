@@ -76,6 +76,12 @@
 	#1
 }
 
+\newcommand{\monsterquote}[1]
+{%
+	\textit{#1}\\
+	\hline
+}
+
 \newcommand{\monstersection}[1]{
 	{\par
 	\color{titlered}\normalfont\scshape\Large #1 \vspace{3pt}
@@ -83,13 +89,19 @@
 	\par\medskip}
 	}
 
-\newenvironment{monsteraction}[1][\unskip]{\emph{\textbf{#1.}}}{\vspace{0.5em}}
+\newcommand{\monsteraction}[2]
+{
+	{\emph{\textbf{#1. }}}\text{#2}\\
+}
 
-\newkeycommand\basics[armorclass=0, hitpoints=0, speed=0]{%
+\newkeycommand\basics[speed=0,dodge=0,armor=0,block=0]
+{
 	\color{titlered}
-	\textbf{Armor Class} \commandkey{armorclass}\\
-	\textbf{Hit Points} \commandkey{hitpoints}\\
-	\textbf{Speed} \commandkey{speed}\\
+	\textbf{Скорость: {\large\commandkey{speed}}} (3 + ЛВ) \\
+	\textbf{Уклонение: {\large\commandkey{armor}}} (\quad + ЛВ) \\
+	\textbf{Броня: {\large\commandkey{block}}} (\quad + ЛВ) \\
+	\textbf{Блок: {\large\commandkey{block}}} \\
+	\hline
 }
 
 \newkeycommand\stats[STR=\stat{0}, DEX=\stat{0}, CON=\stat{0}, INT=\stat{0}, WIT=\stat{0}, WIL=\stat{0}]{%
@@ -111,31 +123,5 @@
 			\end{tabular}
 		\end{tabular}
 	\end{tabular}
-}
-
-\newkeycommand\details[skills=,
-                      damageimmunities=,
-                      savingthrows=,
-                      conditionimmunities=,
-                      damageresistances=,
-                      damagevulnerabilities=,
-                      senses=-,
-                      languages=-,
-                      challenge=0]{%
-  \ifcommandkey{savingthrows}
-    {\textbf{Saving Throws} \commandkey{savingthrows}\\}{}
-  \ifcommandkey{skills}
-    {\textbf{Skills} \commandkey{skills}\\}{}
-  \ifcommandkey{damagevulnerabilities}
-    {\textbf{Damage Vulnerabilities} \commandkey{damagevulnerabilities}\\}{}
-  \ifcommandkey{damageresistances}
-    {\textbf{Damage Resistances} \commandkey{damageresistances}\\}{}
-  \ifcommandkey{damageimmunities}
-    {\textbf{Damage Immunities} \commandkey{damageimmunities}\\}{}
-  \ifcommandkey{conditionimmunities}
-    {\textbf{Condition Immunities} \commandkey{conditionimmunities}\\}{}
-  {\textbf{Senses} \commandkey{senses}\\}
-  {\textbf{Languages} \commandkey{languages}\\}
-  {\textbf{Challenge} \commandkey{challenge}\\}
-\color{black}
+	\hline
 }
