@@ -89,8 +89,17 @@
 	\par\medskip}
 	}
 
-\newcommand{\monsteraction}[2]{{\emph{\textbf{#1. }}}#2\\}
+\newcommand{\monsteraction}[2]{{\emph{\textbf{#1 }}}#2\\}
 
+\newkeycommand\weapon[name = безымянное оружие, hit = 0, dmg = 0, special = обычное]
+{
+	\monsteraction{\commandkey{name}}{(ЛВ \commandkey{hit} / СЛ \commandkey{dmg} / \commandkey{special})}
+}
+
+\newkeycommand\armor[name = безымянные доспехи, dodge = 0, armor = 0, block = 0, special = обычное]
+{
+	\monsteraction{\commandkey{name}}{(ЛВ \commandkey{dodge} / ЛВ \commandkey{armor} / \commandkey{block} / \commandkey{special})}
+}
 
 \newkeycommand\basics[speed=0,dodge=0,armor=0,block=0]
 {
