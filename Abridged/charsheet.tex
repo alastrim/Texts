@@ -1,0 +1,88 @@
+\documentclass[10pt,openany]{book}
+\usepackage[bg-letter]{../lib/dnd}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,ngerman,main=russian]{babel}
+\usepackage{gentium}
+\usepackage{multicol}
+\usepackage{microtype}
+\usepackage{vwcol}
+\begin{document}
+\fontfamily{gentium}\selectfont
+
+\section{}
+\begin{monsterboxnobg}{Кристофер Фрейн}
+	\monsterquote{Мы всегда знаем, какой поступок правилен. Нас никто не поблагодарит, но мы должны взвалить 
+		на плечи любую ношу - будь то тяжелый труд или грех перед господом.}
+	
+	\begin{monstersection}{Характеристики}
+		\stats[STR = \stat{2}, DEX = \stat{4}, CON = \stat{2}, INT = \stat{1}, WIT = \stat{2}, WIL = \stat{10}]
+	\end{monstersection}
+	
+	\begin{multicols}{2}
+		\begin{minipage}{0.45\textwidth}
+			\begin{monstersection}{Защита}
+				\basics[speed = 5, dodge = 8, armor = 12, block = 2]
+			\end{monstersection}
+		\end{minipage}
+		\begin{minipage}{0.45\textwidth}
+			\begin{monstersection}{Атаки}
+				\onaline{Кек}
+				\onaline{Кек}
+				\onaline{Кек}
+				\onaline{}
+			\end{monstersection}
+		\end{minipage}
+	\end{multicols}	
+
+	\begin{vwcol}[widths={0.3,0.6},sep=.8cm, justify=flush,rule=0pt,indent=1em]
+		\begin{minipage}{0.3\textwidth}
+			\begin{monstersection}{Навыки}
+				\onaline{\monsteraction{Железная стена}{}}
+				\onaline{\monsteraction{Несгибаемая воля}{}}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+			\end{monstersection}
+			\begin{monstersection}{Особое}
+				\onaline{\monsteraction{Уставший}{}}
+				\onaline{\monsteraction{Отравлен}{}}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+			\end{monstersection}
+		\end{minipage}
+		\begin{minipage}{0.6\textwidth}
+			\begin{monstersection}{Заклинания}
+				\onlongline{\monsteraction{Ледяные оковы}{}}
+				\onlongline{\monsteraction{Лабиринт отражений}{}}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+			\end{monstersection}
+			\begin{monstersection}{С собой}
+				\onlongline{\weapon[name = Меч, hit = + 1, dmg = - 1, special = парирующее]}
+				\onlongline{\weapon[name = Меч, hit = + 1, dmg = - 1, special = парирующее]}
+				\onlongline{\weapon[name = Глефа, hit = + 3, dmg = + 2, special = {длинное, двуручное}]}
+				\onlongline{\weapon[name = Люцерн, hit = - 1, dmg = + 4, special = {пробивающее, двуручное}]}
+				\onlongline{\weapon[name = Кинжал, hit =  -4, dmg = + 1, special = пробивающее]}
+				\onlongline{\armor[name = Кольчуга, dodge = + 4, armor = + 8, block = 2]}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+			\end{monstersection}
+		\end{minipage}
+	\vspace*{-60ex}
+	\end{vwcol}
+\end{monsterboxnobg}
+\end{document}

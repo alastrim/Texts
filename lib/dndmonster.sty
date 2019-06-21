@@ -51,6 +51,26 @@
 	}%
 }
 
+\newtcolorbox{monsterboxnobg}[2][]{
+   enhanced,
+   frame hidden,
+   before skip=7pt plus2pt,
+   boxrule=0pt,
+   breakable,
+   boxsep=0.25ex,
+   toptitle=3mm,
+   left=2.5mm,
+   right=2.15mm,
+   arc=0mm,
+   opacityback=0,
+   colframe=titlered,
+   fonttitle=\scshape\bfseries\color{titlered}\Large,
+   fontupper=\fontfamily{cmss}\selectfont,
+   title=#2,
+   after={\vspace{7pt plus 1pt}\noindent},
+   #1
+}
+
 \newtcolorbox{monsterbox}[2][]{
 	enhanced,
 	frame hidden,
