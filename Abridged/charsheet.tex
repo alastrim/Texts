@@ -9,11 +9,12 @@
 \usepackage{vwcol}
 \begin{document}
 \fontfamily{gentium}\selectfont
+\pagenumbering{gobble}
 
 \section{\vspace*{-5ex}}
-\begin{monsterboxnobg}{Кристофер Фрейн}{1}
+\begin{monsterboxnobg}{Кристофер Фрейн}{1}{0}
 	\monsterquote{Мы всегда знаем, какой поступок правилен. Нас никто не поблагодарит, но мы должны взвалить 
-		на плечи любую ношу - будь то тяжелый труд или грех перед господом.}
+		на плечи любую ношу - будь то тяжелый труд или грех перед господом.\\}
 	
 	\begin{monstersection}{Характеристики}
 		\stats[STR=\stat{2}, DEX=\stat{4}, CON=\stat{2}, INT=\stat{1}, WIT=\stat{2}, WIL=\stat{10}]
@@ -22,7 +23,7 @@
 	\begin{multicols}{2}
 		\begin{minipage}{0.45\textwidth}
 			\begin{monstersection}{Защита}
-				\basics[speed=5, dodge=8, armor=12, block=2, dodgebase=4, armorbase=8]
+				\basics[speed=5, initiative=+ 6, dodge=8, armor=12, block=2]
 			\end{monstersection}
 		\end{minipage}
 		\begin{minipage}{0.45\textwidth}
@@ -99,4 +100,95 @@
 	\vspace*{-60ex}
 	\end{vwcol}
 \end{monsterboxnobg}
+
+\clearpage
+\section{\vspace*{-5ex}}
+\begin{monsterboxnobg}{\quad}{\quad}{\quad}
+	\monsterquote{\\\\\\}
+	
+	\begin{monstersection}{Характеристики}
+		\stats[STR=\stat{0}, DEX=\stat{0}, CON=\stat{0}, INT=\stat{0}, WIT=\stat{0}, WIL=\stat{0}]
+	\end{monstersection}
+	
+	\begin{multicols}{2}
+		\begin{minipage}{0.45\textwidth}
+			\begin{monstersection}{Защита}
+				\basics[speed=\quad, initiative=\quad, dodge=\quad, armor=\quad, block=\quad]
+			\end{monstersection}
+		\end{minipage}
+		\begin{minipage}{0.45\textwidth}
+			\begin{monstersection}{Атаки}
+				\onsomeline{190}{}
+				\onsomeline{190}{}
+				\onsomeline{190}{}
+				\onsomeline{190}{}
+				\onsomeline{190}{}
+				\onsomeline{190}{}
+			\end{monstersection}
+		\end{minipage}
+	\end{multicols}	
+
+	\begin{vwcol}[widths={0.3,0.6},sep=.8cm, justify=flush,rule=0pt,indent=1em]
+		\begin{minipage}{0.3\textwidth}
+			\begin{monstersection}{Навыки}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+			\end{monstersection}
+			\begin{monstersection}{Особое}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
+			\end{monstersection}
+		\end{minipage}
+		\begin{minipage}{0.6\textwidth}
+			\begin{monstersection}{Заклинания}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+			\end{monstersection}
+			\begin{monstersection}{Инвентарь}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+			\end{monstersection}
+		\end{minipage}
+	\vspace*{-60ex}
+	\end{vwcol}
+\end{monsterboxnobg}
+
 \end{document}

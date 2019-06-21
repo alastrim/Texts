@@ -51,7 +51,7 @@
 	}%
 }
 
-\newtcolorbox{monsterboxnobg}[3][]{
+\newtcolorbox{monsterboxnobg}[4][]{
    enhanced,
    frame hidden,
    before skip=7pt plus2pt,
@@ -66,7 +66,7 @@
    colframe=titlered,
    fonttitle=\scshape\bfseries\color{titlered}\Huge,
    fontupper=\fontfamily{cmss}\selectfont,
-   title={\color{black}#2} \hspace*{\fill} Уровень {\color{black}#3},
+   title={\color{black}#2} \hspace*{\fill} {\Large Уровень {\color{black}\quad#3} \quad Опыт {\color{black}\quad#4}},
    after={\vspace{7pt plus 1pt}\noindent},
    #1
 }
@@ -135,12 +135,13 @@
 	\raisebox{.3ex}{\makebox[0pt][l]{#1}}{\line(1,0){270}}\\
 }
 
-\newkeycommand\basics[speed=0,dodge=0,armor=0,block=0,dodgebase=0,armorbase=0]
+\newkeycommand\basics[speed=0,initiative=0,dodge=0,armor=0,block=0]
 {
 	\color{titlered}
-	\textbf{Скорость: {\color{black}\large\commandkey{speed}}} (3 + ЛВ) \\
-	\textbf{Уклонение: {\color{black}\large\commandkey{dodge}}} ({\color{black}\commandkey{dodgebase}} + ЛВ) \\
-	\textbf{Броня: {\color{black}\large\commandkey{armor}}} ({\color{black}\commandkey{armorbase}} + ЛВ) \\
+	\textbf{Инциатива: {\color{black}\large\commandkey{initiative}}} \\
+	\textbf{Скорость: {\color{black}\large\commandkey{speed}}} \\
+	\textbf{Уклонение: {\color{black}\large\commandkey{dodge}}} \\
+	\textbf{Броня: {\color{black}\large\commandkey{armor}}} \\
 	\textbf{Блок: {\color{black}\large\commandkey{block}}} \\
 }
 
