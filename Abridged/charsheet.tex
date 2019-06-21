@@ -16,21 +16,23 @@
 		на плечи любую ношу - будь то тяжелый труд или грех перед господом.}
 	
 	\begin{monstersection}{Характеристики}
-		\stats[STR = \stat{2}, DEX = \stat{4}, CON = \stat{2}, INT = \stat{1}, WIT = \stat{2}, WIL = \stat{10}]
+		\stats[STR=\stat{2}, DEX=\stat{4}, CON=\stat{2}, INT=\stat{1}, WIT=\stat{2}, WIL=\stat{10}]
 	\end{monstersection}
 	
 	\begin{multicols}{2}
 		\begin{minipage}{0.45\textwidth}
 			\begin{monstersection}{Защита}
-				\basics[speed = 5, dodge = 8, armor = 12, block = 2, dodgebase = 4, armorbase = 8]
+				\basics[speed=5, dodge=8, armor=12, block=2, dodgebase=4, armorbase=8]
 			\end{monstersection}
 		\end{minipage}
 		\begin{minipage}{0.45\textwidth}
 			\begin{monstersection}{Атаки}
-				\onaline{Кек}
-				\onaline{Кек}
-				\onaline{Кек}
-				\onaline{}
+				\onsomeline{190}{\attack[name=Меч, hit=+ 5, dmg=+ 1]}
+				\onsomeline{190}{\attack[name=Ледяные оковы, hit=+ 2, dmg=+ 1, special=закл.]}
+				\onsomeline{190}{\attack[name=Заморозка, hit=+ 2, dmg=+ 1, special={дальн., закл.}]}
+				\onsomeline{190}{}
+				\onsomeline{190}{}
+				\onsomeline{190}{}
 			\end{monstersection}
 		\end{minipage}
 	\end{multicols}	
@@ -67,9 +69,9 @@
 		\end{minipage}
 		\begin{minipage}{0.6\textwidth}
 			\begin{monstersection}{Заклинания}
-				\onlongline{\monsteraction{Ледяные оковы}{}}
-				\onlongline{\monsteraction{Лабиринт отражений}{}}
-				\onlongline{}
+				\onlongline{\magicspell[name=Ледяные оковы, circle=\spellcircle{1}, component=касание]}
+				\onlongline{\magicspell[name=Лабиринт отражений, circle=\spellcircle{2}, component=жест, special=тяжелое]}
+				\onlongline{\magicspell[name=Заморозка, circle=\spellcircle{0}, component=жect]}
 				\onlongline{}
 				\onlongline{}
 				\onlongline{}
@@ -80,12 +82,12 @@
 				\onlongline{}
 			\end{monstersection}
 			\begin{monstersection}{Инвентарь}
-				\onlongline{\weapon[name = Меч, hit = + 1, dmg = - 1, special = парирующее]}
-				\onlongline{\weapon[name = Меч, hit = + 1, dmg = - 1, special = парирующее]}
-				\onlongline{\weapon[name = Глефа, hit = + 3, dmg = + 2, special = {длинное, двуручное}]}
-				\onlongline{\weapon[name = Люцерн, hit = - 1, dmg = + 4, special = {пробивающее, двуручное}]}
-				\onlongline{\weapon[name = Кинжал, hit =  -4, dmg = + 1, special = пробивающее]}
-				\onlongline{\armor[name = Кольчуга, dodge = + 4, armor = + 8, block = 2]}
+				\onlongline{\weapon[name=Меч, hit=+ 1, dmg=- 1, special=парирующее]}
+				\onlongline{\weapon[name=Меч, hit=+ 1, dmg=- 1, special=парирующее]}
+				\onlongline{\weapon[name=Глефа, hit=+ 3, dmg=+ 2, special={длинное, двуручное}]}
+				\onlongline{\weapon[name=Люцерн, hit=- 1, dmg=+ 4, special={пробивающее, двуручное}]}
+				\onlongline{\weapon[name=Кинжал, hit=- 4, dmg=+ 1, special=пробивающее]}
+				\onlongline{\armor[name=Кольчуга, dodge=+ 4, armor=+ 8, block=2]}
 				\onlongline{}
 				\onlongline{}
 				\onlongline{}

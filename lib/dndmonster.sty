@@ -66,7 +66,7 @@
    colframe=titlered,
    fonttitle=\scshape\bfseries\color{titlered}\Huge,
    fontupper=\fontfamily{cmss}\selectfont,
-   title=#2 \hspace*{\fill} Уровень #3,
+   title={\color{black}#2} \hspace*{\fill} Уровень {\color{black}#3},
    after={\vspace{7pt plus 1pt}\noindent},
    #1
 }
@@ -77,14 +77,47 @@
 
 \newcommand{\monsteraction}[2]{{\emph{\textbf{#1 }}}#2\\}
 
-\newkeycommand\weapon[name = безымянное оружие, hit = 0, dmg = 0, special = обычное]
-{
-	\monsteraction{\commandkey{name}}{(ЛВ \commandkey{hit} / СЛ \commandkey{dmg} / \commandkey{special})}
+\newcommand{\spellcircle}[1]
+{%
+	\ifboolexpr{#1 < 1}%
+	{%
+		0%
+	}%
+	{%
+		\ifboolexpr{#1 < 2}%
+		{%
+			\textrm{I}%
+		}%
+		{%
+			\ifboolexpr{#1 < 3}%
+			{%
+				\textrm{II}%
+			}%
+			{%
+				\textrm{III}%
+			}%
+		}%
+	}%
 }
 
-\newkeycommand\armor[name = безымянные доспехи, dodge = 0, armor = 0, block = 0, special = обычное]
+\newkeycommand\attack[name=безымянная атака, hit=0, dmg=0, special=-\,]
 {
-	\monsteraction{\commandkey{name}}{(ЛВ \commandkey{dodge} / ЛВ \commandkey{armor} / \commandkey{block} / \commandkey{special})}
+	\monsteraction{\commandkey{name}}{( \commandkey{hit} / \commandkey{dmg} / \commandkey{special})}
+}
+
+\newkeycommand\magicspell[name=безымянное заклинание, circle=\spellcircle{0}, component=мысль, special=-\,]
+{
+	\monsteraction{\commandkey{name}}{( \commandkey{circle} круг / \commandkey{component} / \commandkey{special})}
+}
+
+\newkeycommand\weapon[name=безымянное оружие, hit=0, dmg=0, special=-\,]
+{
+	\monsteraction{\commandkey{name}}{( \commandkey{hit} / \commandkey{dmg} / \commandkey{special})}
+}
+
+\newkeycommand\armor[name=безымянные доспехи, dodge=0, armor=0, block=0, special=-\,]
+{
+	\monsteraction{\commandkey{name}}{( \commandkey{dodge} / \commandkey{armor} / \commandkey{block} / \commandkey{special})}
 }
 
 \newcommand{\onaline}[1]
@@ -105,10 +138,10 @@
 \newkeycommand\basics[speed=0,dodge=0,armor=0,block=0,dodgebase=0,armorbase=0]
 {
 	\color{titlered}
-	\textbf{Скорость: {\large\commandkey{speed}}} (3 + ЛВ) \\
-	\textbf{Уклонение: {\large\commandkey{dodge}}} (\commandkey{dodgebase} + ЛВ) \\
-	\textbf{Броня: {\large\commandkey{armor}}} (\commandkey{armorbase} + ЛВ) \\
-	\textbf{Блок: {\large\commandkey{block}}} \\
+	\textbf{Скорость: {\color{black}\large\commandkey{speed}}} (3 + ЛВ) \\
+	\textbf{Уклонение: {\color{black}\large\commandkey{dodge}}} ({\color{black}\commandkey{dodgebase}} + ЛВ) \\
+	\textbf{Броня: {\color{black}\large\commandkey{armor}}} ({\color{black}\commandkey{armorbase}} + ЛВ) \\
+	\textbf{Блок: {\color{black}\large\commandkey{block}}} \\
 }
 
 \newkeycommand\stats[STR=\stat{0}, DEX=\stat{0}, CON=\stat{0}, INT=\stat{0}, WIT=\stat{0}, WIL=\stat{0}]{%
