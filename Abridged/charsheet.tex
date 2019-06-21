@@ -11,7 +11,7 @@
 \fontfamily{gentium}\selectfont
 
 \section{\vspace*{-5ex}}
-\begin{monsterboxnobg}{Кристофер Фрейн}
+\begin{monsterboxnobg}{Кристофер Фрейн}{1}
 	\monsterquote{Мы всегда знаем, какой поступок правилен. Нас никто не поблагодарит, но мы должны взвалить 
 		на плечи любую ношу - будь то тяжелый труд или грех перед господом.}
 	
@@ -22,7 +22,7 @@
 	\begin{multicols}{2}
 		\begin{minipage}{0.45\textwidth}
 			\begin{monstersection}{Защита}
-				\basics[speed = 5, dodge = 8, armor = 12, block = 2]
+				\basics[speed = 5, dodge = 8, armor = 12, block = 2, dodgebase = 4, armorbase = 8]
 			\end{monstersection}
 		\end{minipage}
 		\begin{minipage}{0.45\textwidth}
@@ -46,10 +46,16 @@
 				\onaline{}
 				\onaline{}
 				\onaline{}
+				\onaline{}
+				\onaline{}
+				\onaline{}
 			\end{monstersection}
 			\begin{monstersection}{Особое}
 				\onaline{\monsteraction{Уставший}{}}
 				\onaline{\monsteraction{Отравлен}{}}
+				\onaline{}
+				\onaline{}
+				\onaline{}
 				\onaline{}
 				\onaline{}
 				\onaline{}
@@ -69,6 +75,9 @@
 				\onlongline{}
 				\onlongline{}
 				\onlongline{}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
 			\end{monstersection}
 			\begin{monstersection}{Инвентарь}
 				\onlongline{\weapon[name = Меч, hit = + 1, dmg = - 1, special = парирующее]}
@@ -77,6 +86,9 @@
 				\onlongline{\weapon[name = Люцерн, hit = - 1, dmg = + 4, special = {пробивающее, двуручное}]}
 				\onlongline{\weapon[name = Кинжал, hit =  -4, dmg = + 1, special = пробивающее]}
 				\onlongline{\armor[name = Кольчуга, dodge = + 4, armor = + 8, block = 2]}
+				\onlongline{}
+				\onlongline{}
+				\onlongline{}
 				\onlongline{}
 				\onlongline{}
 				\onlongline{}

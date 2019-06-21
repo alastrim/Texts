@@ -51,7 +51,7 @@
 	}%
 }
 
-\newtcolorbox{monsterboxnobg}[2][]{
+\newtcolorbox{monsterboxnobg}[3][]{
    enhanced,
    frame hidden,
    before skip=7pt plus2pt,
@@ -66,41 +66,12 @@
    colframe=titlered,
    fonttitle=\scshape\bfseries\color{titlered}\Huge,
    fontupper=\fontfamily{cmss}\selectfont,
-   title=#2,
+   title=#2 \hspace*{\fill} Уровень #3,
    after={\vspace{7pt plus 1pt}\noindent},
    #1
 }
 
-\newtcolorbox{monsterbox}[2][]{
-	enhanced,
-	frame hidden,
-	before skip=7pt plus2pt,
-	boxrule=0pt,
-	breakable,
-	boxsep=0.25ex,
-	toptitle=3mm,
-	left=2.5mm,
-	right=2.15mm,
-	arc=0mm,
-	borderline north={4pt}{0pt}{titlered},
-	borderline north={2.5pt}{0.75pt}{puregold},
-	borderline south={4pt}{0pt}{titlered},
-	borderline south={2.5pt}{0.75pt}{puregold},
-	colback=monstertan,
-	colbacktitle=monstertan,
-	colframe=titlered,
-	fonttitle=\scshape\bfseries\color{titlered}\Huge,
-	fontupper=\fontfamily{cmss}\selectfont,
-	title=#2,
-	after={\vspace{7pt plus 1pt}\noindent},
-	#1
-}
-
-\newcommand{\monsterquote}[1]
-{%
-	\textit{#1}\\
-	\hline
-}
+\newcommand{\monsterquote}[1]{\textit{#1}\\\hline}
 
 \newcommand{\monstersection}[1]{{\par\color{titlered}\normalfont\scshape\Large \raisebox{.5ex}{\makebox[0pt][l]{#1}}\titlerule[0.7pt] \par\medskip}}
 
@@ -121,17 +92,22 @@
 	\raisebox{.3ex}{\makebox[0pt][l]{#1}}{\line(1,0){120}}\\
 }
 
+\newcommand{\onsomeline}[2]
+{
+	\raisebox{.3ex}{\makebox[0pt][l]{#2}}{\line(1,0){#1}}\\
+}
+
 \newcommand{\onlongline}[1]
 {
 	\raisebox{.3ex}{\makebox[0pt][l]{#1}}{\line(1,0){270}}\\
 }
 
-\newkeycommand\basics[speed=0,dodge=0,armor=0,block=0]
+\newkeycommand\basics[speed=0,dodge=0,armor=0,block=0,dodgebase=0,armorbase=0]
 {
 	\color{titlered}
 	\textbf{Скорость: {\large\commandkey{speed}}} (3 + ЛВ) \\
-	\textbf{Уклонение: {\large\commandkey{dodge}}} (\quad + ЛВ) \\
-	\textbf{Броня: {\large\commandkey{armor}}} (\quad + ЛВ) \\
+	\textbf{Уклонение: {\large\commandkey{dodge}}} (\commandkey{dodgebase} + ЛВ) \\
+	\textbf{Броня: {\large\commandkey{armor}}} (\commandkey{armorbase} + ЛВ) \\
 	\textbf{Блок: {\large\commandkey{block}}} \\
 }
 
